@@ -1,21 +1,25 @@
-# typed: false
-# frozen_string_literal: true
-
 class Asc < Formula
-  desc "A fast, AI-agent friendly CLI for App Store Connect"
+  desc "Fast, AI-agent friendly CLI for App Store Connect"
   homepage "https://github.com/rudrankriyam/App-Store-Connect-CLI"
-  url "https://github.com/rudrankriyam/App-Store-Connect-CLI/releases/download/0.23.4/asc-darwin-arm64"
-  version "0.23.4"
-  sha256 "cc46e0caee4f6637b7833fbfd41ece8ff1451c4948eacd16115c76002cd12a8c"
+  url "https://github.com/rudrankriyam/App-Store-Connect-CLI/archive/refs/tags/0.23.4.tar.gz"
+  sha256 "42fe548be44e39004d7cc4649fba7dd7d22c49766e438ff3dd513431a0dc8609"
   license "MIT"
+  head "https://github.com/rudrankriyam/App-Store-Connect-CLI.git", branch: "main"
 
-  depends_on :macos
+  depends_on "go" => :build
 
   def install
-    bin.install "asc-darwin-arm64" => "asc"
+    ldflags = %W[
+      -s -w
+      -X main.version=#{version}
+      -X main.commit=#{tap.user}
+      -X main.date=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match "ASC is a lightweight CLI", shell_output("#{bin}/asc --help")
+    assert_match "CLI for App Store Connect", shell_output("#{bin}/asc --help 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/asc version")
   end
 end
