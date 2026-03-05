@@ -6,7 +6,7 @@ class Asc < Formula
   homepage "https://github.com/rudrankriyam/App-Store-Connect-CLI"
   url "https://github.com/rudrankriyam/App-Store-Connect-CLI/releases/download/0.37.0/asc_0.37.0_macOS_arm64"
   version "0.37.0"
-  sha256 "97b4c91243403de1c1c839065df1709370d1e0ae92957f615cb06c7daa10a6d8"
+  sha256 "68c4cfae684ae287f2a999e14f7dd12bab149a1fe3f09b15c5dce4c98405d91c"
   license "MIT"
 
   depends_on :macos
