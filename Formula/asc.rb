@@ -12,10 +12,10 @@ class Asc < Formula
   on_macos do
     if Hardware::CPU.arm?
       url 'https://github.com/rudrankriyam/App-Store-Connect-CLI/releases/download/0.48.1/asc_0.48.1_macOS_arm64'
-      sha256 '08997747e35ac9773aa4b22f6e3cd3d2c04033bd86d723af33b2d535ff220c1f'
+      sha256 '556647e6b7210140e936b63ca4bcdef8bbec81d19eebc65d9de55914e63a5c23'
     else
       url 'https://github.com/rudrankriyam/App-Store-Connect-CLI/releases/download/0.48.1/asc_0.48.1_macOS_amd64'
-      sha256 'a8ec4f23689f85ea9e44531a675c7d4bb2ff9af75a84d5e95a3d9ce8f3296096'
+      sha256 '030aa6464af98c5c6547f780ea3a0e1a3da60be0b3bfbe350ddaa02c8deccfee'
     end
   end
 
