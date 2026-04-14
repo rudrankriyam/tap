@@ -4,26 +4,26 @@
 class Asc < Formula
   desc "A fast, AI-agent friendly CLI for App Store Connect"
   homepage 'https://github.com/rudrankriyam/App-Store-Connect-CLI'
-  version '1.2.1'
+  version '1.2.2'
   license 'MIT'
 
   depends_on :macos
 
   on_macos do
     if Hardware::CPU.arm?
-      url 'https://github.com/rudrankriyam/App-Store-Connect-CLI/releases/download/1.2.1/asc_1.2.1_macOS_arm64'
-      sha256 '92b7461c4af73848f31ab25c35ab118c2aef0904ffcc8de69280ce2ce7aa25b1'
+      url 'https://github.com/rudrankriyam/App-Store-Connect-CLI/releases/download/1.2.2/asc_1.2.2_macOS_arm64'
+      sha256 'a5ef2ee92760d671849d423be3206eec0a2d1a176a8f1bb61138f230b393391d'
     else
-      url 'https://github.com/rudrankriyam/App-Store-Connect-CLI/releases/download/1.2.1/asc_1.2.1_macOS_amd64'
-      sha256 '3129159f0736bd6bea9b198ff7c137b4a3c7b26a534730a28e61041594905300'
+      url 'https://github.com/rudrankriyam/App-Store-Connect-CLI/releases/download/1.2.2/asc_1.2.2_macOS_amd64'
+      sha256 'f417dc6b1cad0364d235883981c01e81fdfaf7a5b05ff9a010299bd026ddde0a'
     end
   end
 
   def install
     if Hardware::CPU.arm?
-      bin.install 'asc_1.2.1_macOS_arm64' => 'asc'
+      bin.install 'asc_1.2.2_macOS_arm64' => 'asc'
     else
-      bin.install 'asc_1.2.1_macOS_amd64' => 'asc'
+      bin.install 'asc_1.2.2_macOS_amd64' => 'asc'
     end
   end
 
